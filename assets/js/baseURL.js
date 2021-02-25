@@ -17,7 +17,6 @@ $.ajaxPrefilter(function (options) {
     options.complete = res => {
         if (res.responseJSON.message === '身份认证失败！' && res.responseJSON.status === 1) {
             // 强制删除token
-            console.log(1);
             localStorage.removeItem('token');
             // 强制跳转
             location.assign('login.html')
